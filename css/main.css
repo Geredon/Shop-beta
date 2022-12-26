@@ -1,0 +1,114 @@
+
+/* -----------universal start------------ */
+:root {
+    --orange: #E97F03;
+    --black: #000;
+    --size: 14px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: var(--size);
+    font-weight: 400;
+    line-height: 16px;
+    color: var(--black);
+}
+
+input {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    color: var(--black);
+}
+
+input::placeholder {
+    font-size: var(--size);
+    color: var(--black);
+}
+
+a {
+    color: var(--black);
+    text-decoration: none;
+}
+
+/* -----------universal end------------ */
+
+/* --------header start--------- */
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    padding: 0 24px;
+    align-items: center;
+}
+
+.search-field {
+    display: flex;
+    width: 300px;
+    height: 40px;
+    align-items: center;
+}
+
+.search-field:focus-within {
+    border-bottom: var(--black) 2px solid;  
+    border-color: var(--orange);
+    color: var(--orange);
+    transition: all .2s linear;
+}
+
+.search-icon {
+    padding-right: 12px;
+}
+
+.header-input{
+    position: relative;
+    bottom: 3px;
+} 
+
+.input-search {
+    border: none;  
+}
+
+.input-search:focus {
+    outline: none;
+}
+
+input::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.3s ease;}
+input::-moz-placeholder                {opacity: 1; transition: opacity 0.3s ease;}
+input:-moz-placeholder                 {opacity: 1; transition: opacity 0.3s ease;}
+input:-ms-input-placeholder            {opacity: 1; transition: opacity 0.3s ease;}
+input:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+input:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.3s ease;}
+input:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.3s ease;}
+input:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;}
+
+.shopping {
+    display: flex;
+    gap: 18px;
+}
+
+/* --------------Header end----------------- */
+
+/*--------------Media start----------------*/
+
+@media screen and (max-width: 525px) {
+
+    .main-header {
+        height: 72px;
+    }
+
+    .search-field {
+        max-width: 200px;
+     }
+ 
+     .input-search {
+         width: 115px;
+     }
+}
+
+/*--------------Media end----------------*/
