@@ -61,7 +61,7 @@ h5 {
     height: 40px;
 }
 
-.quantity button {
+.minus-btn, .plus-btn {
     display: flex;
     align-items: center;
     justify-content: center;

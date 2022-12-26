@@ -98,7 +98,7 @@ input:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s eas
 
 @media screen and (max-width: 525px) {
 
-    header {
+    .main-header {
         height: 72px;
     }
 
