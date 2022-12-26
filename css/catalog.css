@@ -1,7 +1,5 @@
 @import url(./main.css);
 
-/*--------------Catalog start----------------*/
-
 .catalog {
     width: 100%;
     padding: 0 24px;
@@ -69,6 +67,7 @@ a {
     align-items: center;
     height: 40px;
     font-size: 18px;
+    text-align: center;
 }
 
 .product-price {
@@ -78,7 +77,7 @@ a {
     height: 20px;
     font-size: 14px;
 }
-/*--------------Catalog end----------------*/
+
 
 /*--------------Media start----------------*/
 

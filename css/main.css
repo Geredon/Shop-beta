@@ -39,7 +39,7 @@ a {
 
 /* --------header start--------- */
 
-header {
+.main-header {
     display: flex;
     justify-content: space-between;
     height: 80px;
