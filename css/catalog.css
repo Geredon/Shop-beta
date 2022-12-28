@@ -13,6 +13,10 @@
     list-style: none;
 }
 
+.products-item li.hide {
+    display: none;
+}
+
 .product {
     display: flex;
     align-items: center;
