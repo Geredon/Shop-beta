@@ -95,6 +95,10 @@ a {
         flex: 0 0 150px;
         transition: all .5s linear
     }
+
+    .product-title {
+        padding-bottom: 16px;
+    }
 }
 
 /*--------------Media end----------------*/

@@ -1,26 +1,15 @@
-import { getCatalogFetch, getDetailedFetch } from "./api.js";
-import { renderCataloc,renderDetailed } from "./render-pages.js";
+import { getCatalogFetch } from "./api.js";
+import { renderCataloc } from "./render-pages.js";
 
-let currentURL = location.pathname.split('/').pop();
 
-let data;
-async function init() {
-    switch(currentURL) {
-        case 'index.html':
-            let res = await getCatalogFetch();
-            data = res.content;
-            renderCataloc(data);
-            createSearch(data);
-            break;
-        case 'detailed-page.html' :
-            let response = await getDetailedFetch();
-            data = response.content;
-            renderDetailed(data);
-            break;
-    }      
+async function initCatalog() {
+    let res = await getCatalogFetch();
+    let dataCatalog = res.content;
+    renderCataloc(dataCatalog);
+    createSearch(dataCatalog);
 };
 
-init();
+initCatalog();
 
 function createSearch() {
     let inputSearch = document.querySelector(".input-search").oninput = function () {
