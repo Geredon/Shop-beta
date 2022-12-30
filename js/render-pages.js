@@ -1,4 +1,4 @@
-import { mainUrl } from "./url.js";
+import { mainUrl } from "./constants.js";
 
 export function renderCataloc(dataCatalog) {
     let productsItem = document.querySelector(".products-item");
@@ -14,7 +14,7 @@ export function renderCataloc(dataCatalog) {
                     </div>
                     <div class="product-img">
                         <div class="wrapper-img">
-                            <img src="${pathImgProducts()}" alt="product-img">
+                            <img src="${pathImgProducts(content.id)}" alt="product-img">
                         </div>
                     </div>
                     <p class="product-title">
@@ -26,14 +26,13 @@ export function renderCataloc(dataCatalog) {
                 </a>
             </li>
             `
-        ).join(" ")
-        
-}
+        ).join(" ")  
+};
 
-function pathImgProducts() {
-    let pathUrl = mainUrl + "picture/min/:pictureld/"
+function pathImgProducts(id) {
+    const pathUrl = mainUrl + "picture/min/:pictureld/?id=" + id ;
     return pathUrl;
-}
+};
 
 export function renderDetailed(dataDetailed) {
     let cardPrice = document.querySelector(".card-price");
@@ -53,4 +52,4 @@ export function renderDetailed(dataDetailed) {
         <h5>Details</h5>
         <p>${dataDetailed.details}</p>
         `     
-}
+};

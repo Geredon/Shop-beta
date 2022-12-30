@@ -1,7 +1,7 @@
-import { mainUrl } from "./url.js";
+import { mainUrl } from "./constants.js";
 
 export async function  getCatalogFetch() {
-    const mainFetch = await fetch('http://127.0.0.1:3006/item')
+    const mainFetch = await fetch(mainUrl + '/item')
     .then(response => response.json())
     return mainFetch;
 };

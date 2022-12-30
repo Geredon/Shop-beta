@@ -4,7 +4,7 @@ import { renderDetailed } from "./render-pages.js";
 let url = new URL(location.href);
 
 async function initDetailed() {
-    let response = await getDetailedFetch(url.searchParams.get("id"));
+    const response = await getDetailedFetch(url.searchParams.get("id"));
     let dataDetailed = response.content;
     renderDetailed(dataDetailed);
 }

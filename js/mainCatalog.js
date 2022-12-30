@@ -1,9 +1,8 @@
 import { getCatalogFetch } from "./api.js";
 import { renderCataloc } from "./render-pages.js";
 
-
 async function initCatalog() {
-    let res = await getCatalogFetch();
+    const res = await getCatalogFetch();
     let dataCatalog = res.content;
     renderCataloc(dataCatalog);
     createSearch(dataCatalog);
@@ -16,9 +15,9 @@ function createSearch() {
         let val = this.value.trim();
         let productsItem = document.querySelectorAll(".products-item li")
         
-        if(val != '') {
+        if(val !== '') {
             productsItem.forEach(function(elem) {
-                if(elem.innerText.search((RegExp("\^"+ val,"i"))) == -1) {
+                if(elem.innerText.search((RegExp("\^"+ val,"i"))) === -1) {
                     elem.classList.add("hide")
                 }
                 else {
