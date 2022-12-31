@@ -14,7 +14,7 @@ export function renderCataloc(dataCatalog) {
                     </div>
                     <div class="product-img">
                         <div class="wrapper-img">
-                            <img src="${pathImgProducts(content.id)}" alt="product-img">
+                            <img src="${mainUrl}${content.picture.path}" alt="${content.picture.alt}">
                         </div>
                     </div>
                     <p class="product-title">
@@ -27,11 +27,6 @@ export function renderCataloc(dataCatalog) {
             </li>
             `
         ).join(" ")  
-};
-
-function pathImgProducts(id) {
-    const pathUrl = mainUrl + "picture/min/:pictureld/?id=" + id ;
-    return pathUrl;
 };
 
 export function renderDetailed(dataDetailed) {
