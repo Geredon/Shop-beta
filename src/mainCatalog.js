@@ -12,10 +12,12 @@ async function initCatalog() {
 initCatalog();
 
 function createSearch() {
-    let inputSearch = document.querySelector(".input-search").oninput = function () {
-        let val = this.value.trim();
+    onchange =  debounce(search, 2000)
+    let inputSearch = document.querySelector(".input-search").addEventListener('keyup', onchange )
+
+    function search(e) {
         let productsItem = document.querySelectorAll(".products-item li")
-        
+        let val = e.target.value;
         if(val !== '') {
             productsItem.forEach(function(elem) {
                 if(elem.innerText.search((RegExp("\^"+ val,"i"))) === -1) {
@@ -33,3 +35,12 @@ function createSearch() {
         }
     }
 };
+
+const debounce = ( fn, ms ) => {     
+    let timeout;
+    return function() {
+       const fnCall = () => {fn.apply(this, arguments)}
+        clearTimeout(timeout);
+        timeout = setTimeout(fnCall, ms)
+    }
+}
