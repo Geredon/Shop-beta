@@ -1,5 +1,6 @@
 import { getCatalogFetch } from "./api.js";
 import { renderCataloc } from "./render-pages.js";
+import './css/catalog.css';
 
 async function initCatalog() {
     const res = await getCatalogFetch();
@@ -28,7 +29,7 @@ function createSearch() {
         else {
             productsItem.forEach(function(elem) {
                 elem.classList.remove("hide")
-            });
+            }); 
         }
     }
 };

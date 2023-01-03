@@ -1,5 +1,6 @@
 import { getDetailedFetch } from "./api.js";
 import { renderDetailed } from "./render-pages.js";
+import './css/detailed.css'
 
 let url = new URL(location.href);
 
