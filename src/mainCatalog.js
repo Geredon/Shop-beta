@@ -1,5 +1,6 @@
 import { getCatalogFetch } from "./api.js";
 import { renderCataloc } from "./render-pages.js";
+import { debounce } from "./debounce.js";
 import './css/catalog.css';
 
 async function initCatalog() {
@@ -12,7 +13,7 @@ async function initCatalog() {
 initCatalog();
 
 function createSearch() {
-    onchange =  debounce(search, 2000)
+    onchange =  debounce(search, 200)
     let inputSearch = document.querySelector(".input-search").addEventListener('keyup', onchange )
 
     function search(e) {
@@ -36,11 +37,3 @@ function createSearch() {
     }
 };
 
-const debounce = ( fn, ms ) => {     
-    let timeout;
-    return function() {
-       const fnCall = () => {fn.apply(this, arguments)}
-        clearTimeout(timeout);
-        timeout = setTimeout(fnCall, ms)
-    }
-}
