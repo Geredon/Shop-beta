@@ -2,14 +2,16 @@ const path = require('path');
 
 module.exports = {
   mode: 'development',
+  watch: true,
   entry: {
-    mainCatalog: './src/mainCatalog.js',
-    mainDetailed: './src/mainDetailed.js',
+    mainCatalog: './src/catalog.js',
+    mainDetailed: './src/detailed.js',
     },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
   },
+
   module: {
     rules: [
       {

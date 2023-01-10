@@ -42,18 +42,17 @@ a {
     margin: 10px;
 }
 
- .product-favorite-two {
-    display: flex;
-    justify-content: end;
-    margin: 10px;
-}
-
 .product-favorite > svg *{
     stroke-width: 9%;
     stroke: #959595;
 }
 
 .product-favorite > svg *:hover {
+    fill: var(--orange);
+    stroke: none;
+}
+
+.product-favorite-show > svg *{
     fill: var(--orange);
     stroke: none;
 }
