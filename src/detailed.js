@@ -1,5 +1,6 @@
 import { getDetailedFetch } from "./api.js";
-import './css/detailed.css'
+import './css/detailed.css';
+
 
 let url = new URL(location.href);
 
@@ -10,7 +11,6 @@ async function initDetailed() {
 }
 
 initDetailed()
-
 function renderDetailed(dataDetailed) {
     let cardPrice = document.querySelector(".card-price");
     let detailedProduct =document.querySelector(".detailed-product");

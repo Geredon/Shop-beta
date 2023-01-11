@@ -9,7 +9,6 @@ async function initCatalog() {
     renderCataloc(dataCatalog);
     createSearch(dataCatalog);
 };
-
 initCatalog();
 
 function createSearch() {
