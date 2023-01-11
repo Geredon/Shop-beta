@@ -1,18 +1,29 @@
 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+let htmlPageNames = ['detailed'];
+let multipleHtmlPlugins = htmlPageNames.map(name => {
+  return new HtmlWebpackPlugin({
+    template: `./src/${name}.html`, // relative path to the HTML files
+    filename: `${name}.html`, // output HTML files
+    chunks: [`${name}`] // respective JS files
+  })
+});
 
 module.exports = {
   mode: 'development',
   entry: {
-    catalog: './src/catalog.js',
+    index: './src/index.js',
     detailed: './src/detailed.js',
     },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
+    clean: true,
   },
+
   devtool: 'inline-source-map',
   module: {
     rules: [
@@ -46,14 +57,10 @@ module.exports = {
   plugins: [
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'src', 'index.html'),
-      filename: 'index.html'
+      template: "./src/index.html",
+      chunks: ['index']
     }),
-    new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'src', 'detailed-page.html'),
-      filename: 'detailed-page.html'
-    }),
-],
+].concat(multipleHtmlPlugins),
     devServer: {
       static: {
         directory: path.join(__dirname, 'dist'),
