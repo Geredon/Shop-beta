@@ -94,6 +94,87 @@ input:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s eas
 
 /* --------------Header end----------------- */
 
+/* --------------Modale start----------------- */
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.popup-show {
+    display: block;
+    z-index: 100;
+}
+
+.popup-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.popup-content {
+    text-align: center;
+    height: 250px;
+    width: 400px;
+    padding: 28px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.popup-close-img {
+    position: relative;
+    margin: 0 auto;
+    height: 48px;
+    width: 48px;
+    margin-bottom: 16px;
+}
+
+.popup-close-img > img {
+    width: 100%;
+}
+
+.popup-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 46px;
+    font-size: 32px;
+}
+
+.popup-text{
+    padding-bottom: 24px;
+}
+
+.popup-close-btn {
+    display: flex;
+    justify-content: end;
+}
+
+.popup-close {
+    width: 64px;
+    height: 28px;
+    border: none;
+    border-radius: 5px;
+    background-color: #eb9d45;
+    cursor: pointer;
+}
+
+.popup-close:hover {
+    background-color: #e7b377;
+}
+
+/* --------------Modale end----------------- */
+
 /*--------------Media start----------------*/
 
 @media screen and (max-width: 525px) {
